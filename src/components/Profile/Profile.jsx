@@ -35,9 +35,7 @@ export default function Profile({ url, userName, tag, location, followers, views
 Profile.propTypes = {
     url: PropTypes.string,
     userName: PropTypes.string,
-    tag: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number]),
+    tag: PropTypes.string, 
     location: PropTypes.string,
     followers: PropTypes.number,
     views: PropTypes.number,

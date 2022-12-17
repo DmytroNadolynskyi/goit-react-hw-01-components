@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import FriendListItem from 'components/FriendListItem/FriendListItem'
 
-export default function FriendList({url,status,userName, id}) {
+export default function FriendList({friends}) {
 return(
-    <li class="item">
-        <span class="status">{status}</span>
-        <img class="avatar" src={url} alt="User avatar" width="48" />
-        <p class="name">{userName }</p>
-    </li>
+    <ul class="list">
+        {friends.map(friend => (
+            <FriendListItem friends={friend } key={friend.id} />
+        ))}
+    </ul>
 )}
 // {isOnline ? 'odccd' : 'cecece'}
