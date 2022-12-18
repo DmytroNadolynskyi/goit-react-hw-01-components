@@ -9,3 +9,12 @@ return(
     </li>
 )}
 // {isOnline ? 'odccd' : 'cecece'}
+
+FriendListItem.propTypes = {
+    friends: PropTypes.shape(
+        {
+            isOnline: PropTypes.string.isRequired,
+            avatar: PropTypes.string.isRequired,
+            name:PropTypes.string.isRequired,
+        }).isRequired
+}
