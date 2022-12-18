@@ -20,7 +20,7 @@ export default function Profile({ avatar, userName, tag, location, stats: { foll
                     width='120'
                 />
                 <UserName>{userName}</UserName>
-                <Tag>{tag}</Tag>
+                <Tag>@{tag}</Tag>
                 <Location>{location}</Location>
             </ Description>
 
