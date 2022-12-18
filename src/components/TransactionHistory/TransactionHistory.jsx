@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function TransactionHistory({type,amount,currency }) {
+export default function TransactionHistory({items }) {
   return(
   <table class="transaction-history">
     <thead>
@@ -11,18 +11,24 @@ export default function TransactionHistory({type,amount,currency }) {
       </tr>
     </thead>
 
-    <tbody>
-      <tr>
-        <td>{type}</td>
-        <td>{amount}</td>
-        <td>{currency}</td>
+      <tbody>
+        {items.map(item => (
+      <tr key={item.id}>
+        <td>{item.type}</td>
+        <td>{item.amount}</td>
+        <td>{item.currency}</td>
       </tr>
-      <tr>
-        <td>{type}</td>
-        <td>{amount}</td>
-        <td>{currency}</td>
-        </tr>
-        
+      ))}
     </tbody>
   </table>
 )}
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape(
+    {
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })).isRequired,
+  
+};
